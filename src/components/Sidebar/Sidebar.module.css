@@ -1,0 +1,193 @@
+/* 🔹 Sidebar Container */
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 70px; /* Align with Navbar */
+  left: 0;
+  height: calc(100% - 70px);
+  width: 80px; /* Default collapsed width */
+  background-color: var(--sidebar-bg);
+  color: var(--text-color);
+  transition: width 0.3s ease-in-out;
+  z-index: 200;
+  overflow: hidden;
+}
+
+/* 🔹 Sidebar Expand on Hover */
+.Sidebar:hover {
+  width: 280px; /* Expand on hover */
+}
+
+/* 🔹 Top Section: Chat History */
+.TopSection {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* 🔹 Sidebar Title */
+.SidebarTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* 🔹 Empty Message */
+.EmptyMessage {
+  font-size: 14px;
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+/* 🔹 Bottom Section: User Info & Authentication */
+.BottomSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--sidebar-footer-bg);
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+}
+
+/* 🔹 User Info */
+.UserInfo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease-in-out;
+}
+
+.UserInfo:hover {
+  background: var(--hover-bg);
+}
+
+/* 🔹 User Avatar */
+.UserAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.UserAvatar:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
+/* 🔹 User Email */
+.UserEmail {
+  font-size: 14px;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px; /* Prevents overflow */
+  transition: color 0.3s ease-in-out;
+}
+
+/* 🔹 Show Full Email on Hover */
+.UserEmail:hover {
+  overflow: visible;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 280px;
+}
+
+/* 🔹 Authentication Dropdown */
+.Dropdown {
+  position: absolute;
+  bottom: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dropdown-bg);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* 🔹 Show Dropdown When Active */
+.UserInfo:hover .Dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* 🔹 Logout Button */
+.DropdownButton {
+  background-color: var(--logout-button-bg);
+  color: var(--button-text);
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease-in-out;
+  text-align: center;
+  width: 100%;
+}
+
+.DropdownButton:hover {
+  background-color: var(--logout-button-hover-bg);
+}
+
+/* 🔹 Login Button */
+.AuthButton {
+  width: 100%;
+  background-color: var(--auth-button-bg);
+  color: var(--button-text);
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  text-align: center;
+}
+
+.AuthButton:hover {
+  background-color: var(--auth-button-hover-bg);
+}
+
+/* 🔹 Responsive Sidebar */
+@media (max-width: 768px) {
+  .Sidebar {
+    width: 70px;
+  }
+
+  .Sidebar:hover {
+    width: 240px;
+  }
+
+  .UserAvatar {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* 🔹 Dark Mode */
+[data-theme="dark"] {
+  --sidebar-bg: rgba(20, 30, 40, 0.95);
+  --sidebar-expanded-bg: rgba(15, 25, 35, 1);
+  --sidebar-footer-bg: rgba(30, 45, 60, 1);
+  --text-color: #ffffff;
+  --text-secondary: #aaaaaa;
+  --border-color: rgba(255, 255, 255, 0.2);
+  --dropdown-bg: rgba(30, 45, 60, 1);
+  --hover-bg: rgba(255, 255, 255, 0.15);
+  --logout-button-bg: #d35400;
+  --logout-button-hover-bg: #a04000;
+  --auth-button-bg: #2980b9;
+  --auth-button-hover-bg: #1c5980;
+}

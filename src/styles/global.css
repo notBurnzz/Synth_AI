@@ -1,0 +1,73 @@
+/* ✅ Default Light Mode */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --text-color: #1e272e;
+  --text-secondary: #7f8c8d;
+  --background-color: #ecf0f1;
+  --navbar-bg: #ffffff;
+  --button-bg: #3498db;
+  --button-text: #ffffff;
+  --sidebar-bg: #2c3e50;
+  --sidebar-expanded-bg: #1e2d3b;
+  --sidebar-footer-bg: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --dropdown-bg: #34495e;
+  --hover-bg: rgba(0, 0, 0, 0.1);
+  --logout-button-bg: #e74c3c;
+  --logout-button-hover-bg: #c0392b;
+  --auth-button-bg: #3498db;
+  --auth-button-hover-bg: #217dbb;
+}
+
+/* ✅ Dark Mode */
+[data-theme="dark"] {
+  --primary-color: #2980b9;
+  --secondary-color: #1b2838;
+  --text-color: #ffffff;
+  --text-secondary: #aaaaaa;
+  --background-color: #121212;
+  --navbar-bg: #222;
+  --button-bg: #444;
+  --button-text: #ffffff;
+  --sidebar-bg: rgba(20, 30, 40, 0.95);
+  --sidebar-expanded-bg: rgba(15, 25, 35, 1);
+  --sidebar-footer-bg: rgba(30, 45, 60, 1);
+  --border-color: rgba(255, 255, 255, 0.2);
+  --dropdown-bg: rgba(30, 45, 60, 1);
+  --hover-bg: rgba(255, 255, 255, 0.15);
+  --logout-button-bg: #d35400;
+  --logout-button-hover-bg: #a04000;
+  --auth-button-bg: #2980b9;
+  --auth-button-hover-bg: #1c5980;
+}
+
+/* ✅ Apply Theme */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+.Navbar {
+  background-color: var(--navbar-bg);
+  padding: 10px 20px;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+}
+body {
+  background-color: red !important;
+}
